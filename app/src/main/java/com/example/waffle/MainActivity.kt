@@ -26,6 +26,9 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import com.solana.mobilewalletadapter.clientlib.ActivityResultSender
 
+import androidx.compose.foundation.layout.fillMaxSize
+import com.example.waffle.composables.WaffleCard
+
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
@@ -57,6 +60,14 @@ class MainActivity : ComponentActivity() {
                             identityName = application.getString(R.string.app_name),
                             activityResultSender = activityResultSender,
                             modifier = Modifier.align(Alignment.End)
+                        )
+
+                        WaffleCard(
+                            identityUri = Uri.parse(application.getString((R.string.id_url))),
+                            iconUri = Uri.parse(application.getString(R.string.id_favicon)),
+                            identityName = application.getString(R.string.app_name),
+                            intentSender = activityResultSender,
+                            modifier = Modifier.fillMaxSize(),
                         )
                     }
                 }
