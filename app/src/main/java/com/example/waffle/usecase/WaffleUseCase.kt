@@ -43,7 +43,7 @@ class WaffleUseCase @Inject constructor(
         // Derive the waffle PDA from the name
         val waffleKey = PublicKey.findProgramAddress(
             listOf("waffle".toByteArray(), name.toByteArray()),
-            PublicKey("B6cnkQKZeNT4VEmkjfNfisL4UzobUfL5wU93xi16DSTU")
+            PublicKey("5qFnsyF5zo6NsoGCfj2HndizxFBAXwe3YbfzppfhTNz3")
         )
 
         // Defining all accounts involved in the instruction
@@ -56,7 +56,7 @@ class WaffleUseCase @Inject constructor(
 
 
         return TransactionInstruction(
-            PublicKey("B6cnkQKZeNT4VEmkjfNfisL4UzobUfL5wU93xi16DSTU"),
+            PublicKey("5qFnsyF5zo6NsoGCfj2HndizxFBAXwe3YbfzppfhTNz3"),
             keys,
             Borsh.encodeToByteArray(
                 AnchorInstructionSerializer("create_waffle"),
